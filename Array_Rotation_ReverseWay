@@ -40,6 +40,7 @@ def rev(arr,start,end):
 def leftRotate(arr, d, n):
     rev(arr,0,d)
     rev(arr,d,n)
+    return arr[::-1]
     
 def printArray(arr, size): 
 	for i in range(size): 
@@ -47,5 +48,5 @@ def printArray(arr, size):
 
 
 arr = [1, 2, 3, 4, 5, 6, 7]
-leftRotate(arr,3,len(arr))
+arr = leftRotate(arr,3,len(arr))
 printArray(arr,len(arr))
