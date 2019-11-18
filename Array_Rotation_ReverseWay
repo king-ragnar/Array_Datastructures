@@ -1,0 +1,27 @@
+#Array rotation using reverse
+#Concept: 
+#Arr=[1,2,3,4,5,6] d=2
+#Step 1 : a=[1,2] reverse-> a[2,1]
+#Step 2 : b=[3,4,5,6] reverse -> b[6,5,4,3]
+#Step 3 : reverse[a+b] is the answer
+
+def rev(arr,start,end):
+    arr=arr[start:end][::-1]
+    return arr
+    
+def leftRotate(arr, d, n):
+    a=rev(arr,0,d)
+    b=rev(arr,d,n)
+    c=a+b
+    c=c[::-1]
+    for i in range(len(arr)):
+        arr[i]=c[i]
+
+def printArray(arr, size): 
+	for i in range(size): 
+		print ("% d"% arr[i], end =" ") 
+
+
+arr = [1, 2, 3, 4, 5, 6, 7]
+leftRotate(arr,3,len(arr))
+printArray(arr,len(arr))
