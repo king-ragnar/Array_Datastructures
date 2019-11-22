@@ -1,0 +1,22 @@
+#Find maximum value of Sum( i*arr[i]) with only rotations on given array allowed
+#o(n) method python
+def rotation(a):
+    
+    n=['na']*len(a)
+    
+    first=a[len(a)-1]
+    for i in range(len(a)-1,0,-1):
+        a[i]=a[i-1]
+    a[0]=first
+    sum=0
+    for i in range(len(a)):
+        sum=sum+(a[i]*i)
+    print(a)
+    return sum
+
+a=[10, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+lis=[]
+for i in range(len(a)):
+    x=rotation(a)
+    lis.append(x)
+print(lis.index(max(lis))+1,max(lis))
