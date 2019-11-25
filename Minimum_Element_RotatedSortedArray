@@ -1,0 +1,24 @@
+#use pivot binary search
+def find(a,start,end):
+    if start  == end:
+        return start
+    
+    if start > end:
+        return -1
+    
+    mid= (start+end)//2
+    
+    if (mid < end and a[mid] > a[mid+1]):
+        return a[mid+1]
+    elif (start < mid and a[mid] < a[mid-1]):
+        return a[mid]
+    elif a[start] > a[end]:
+        find(a,mid+1,end)
+    else:
+        find(a,start,mid-1)
+    
+    
+    
+a=[20,25,30,5,10,15]
+
+print(find(a,0,len(a))) 
