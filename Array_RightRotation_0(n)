@@ -1,0 +1,25 @@
+#Input: arr[] = {1, 2, 3, 4, 5, 
+#                6, 7, 8, 9, 10}
+#          k = 3
+#Output: 8 9 10 1 2 3 4 5 6 7
+#
+#Input: arr[] = {121, 232, 33, 43 ,5}
+#           k = 2
+#Output: 43 5 121 232 33
+def rrotate(a,key):
+        
+    for i in range(0,key%len(a)):
+        first=a[len(a)-1]
+        for i in range(len(a)-1,0,-1):
+            a[i]=a[i-1]
+            print(i)
+        a[0] = first
+    for i in range(0,len(a)):
+         print(a[i],end=" ")
+        
+
+
+
+a=[1,2,3,4,5,6,7,8,9,10]
+
+rrotate(a,3)
