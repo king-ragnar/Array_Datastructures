@@ -1,4 +1,6 @@
+#min element in sorted rotated array
 #use pivot binary search
+
 def find(a,start,end):
     if start  == end:
         return start
