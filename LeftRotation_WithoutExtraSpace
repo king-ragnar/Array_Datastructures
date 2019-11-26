@@ -1,0 +1,10 @@
+#left rotation without extra space simple logic
+
+def rotate(a,key):
+    for i in range(len(a)):
+        print(a[(key+i)%len(a)],end=" ")
+
+
+
+a=[1,2,3,4]
+rotate(a,2)
