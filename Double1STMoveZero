@@ -12,3 +12,41 @@ Input : arr[] = {0, 2, 2, 2, 0, 6, 6, 0, 0, 8}
 Output :  4 2 12 8 0 0 0 0 0 0
 
 '''
+def pushZerosToEnd(arr, n): 
+    index=0
+    for i in range(len(arr)):
+        if arr[i]!=0:
+            temp=arr[i]
+            arr[i]=0
+            arr[index]=temp
+            index=index+1
+            
+  
+# function to rearrange the array 
+# elements after modification 
+def modifyAndRearrangeArr(ar, n): 
+    for i in range(len(ar)-1):
+        if ar[i] ==ar[i+1] and ar[i] != 0:
+            ar[i]=ar[i]*2
+            ar[i+1]=0
+    pushZerosToEnd(arr, n) 
+  
+  
+# function to print the array elements 
+def printArray(arr, n): 
+  
+    for i in range(0, n): 
+        print(arr[i],end=" ") 
+  
+  
+# Driver program to test above 
+arr = [2, 2, 0, 4, 0, 8] 
+n = len(arr)  
+  
+print("Original array:",end=" ") 
+printArray(arr, n) 
+  
+modifyAndRearrangeArr(arr, n) 
+  
+print("\nModified array:",end=" ") 
+printArray(arr, n) 
