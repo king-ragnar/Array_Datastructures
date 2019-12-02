@@ -1,0 +1,48 @@
+'''
+
+Rearrange positive and negative numbers with constant extra space
+Given an array of positive and negative numbers, arrange them such that all negative integers appear before all the positive integers in the array without using any additional data structure like hash table, arrays, etc. The order of appearance should be maintained.
+
+Examples:
+
+Input:  [12 11 -13 -5 6 -7 5 -3 -6]
+Output: [-13 -5 -7 -3 -6 12 11 6 5]
+
+'''
+
+
+
+def printArray(arr, n): 
+    for i in range(n): 
+        print(arr[i], end = " ") 
+    print() 
+  
+
+def RearrangePosNeg(arr, n):
+    '''
+    index = 0 
+    for i in range(len(arr)):
+        if arr[i] < 0 :
+            if index != i:
+                temp = arr[index]
+                arr[index] = arr[i]
+                j=index
+            index=index+1
+    '''
+    newa=[]
+    newb=[]
+    for i in arr:
+        if i < 0:
+            newa.append(i)
+        else:
+            newb.append(i)
+    print(newa+newb)
+  
+if __name__ == "__main__": 
+    arr = [ -12, 11, -13, -5,  
+            6, -7, 5, -3, -6 ] 
+    n = len(arr) 
+  
+    RearrangePosNeg(arr, n) 
+    printArray(arr, n) 
+  
