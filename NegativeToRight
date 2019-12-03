@@ -1,0 +1,21 @@
+'''
+self explain negative elements to the right without changing order
+
+'''
+
+def segregateElements(arr, n): 
+    # Create an empty array to store result 
+    index = n-1
+    for i in range(n-1,0,-1):
+        if arr[i]<0:
+            temp=arr[index]
+            arr[index] = arr[i]
+            arr[i]=temp
+            index = index - 1
+            #print(index)
+    print(arr)
+# Driver program 
+arr = [1 ,-1 ,-3 , -2, 7, 5, 11, 6 ] 
+n = len(arr) 
+  
+segregateElements(arr, n); 
