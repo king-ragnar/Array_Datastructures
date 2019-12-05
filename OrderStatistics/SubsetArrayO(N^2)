@@ -1,0 +1,25 @@
+'''
+
+Given an unsorted array A of size N of non-negative integers, find a continuous sub-array which adds to a given number S.
+
+
+'''
+def find(arr,key):
+    
+    for i in range(0,len(arr)):
+        sum=arr[i]
+        for j in range(i+1,len(arr)):
+            sum=sum+arr[j]
+            if sum == key:
+                #print(i,j)
+                print(i+1,j+1,key)
+                return
+            
+    
+    
+    
+    
+    
+arr = [1,2,3,7,5]
+key=12
+find(arr,key)
